@@ -13,6 +13,9 @@ http.listen(port, (err) => {
     return console.log("Successsfully connected to the server at port :",port );
 })
 
+// SETTING STATIC FILES
+app.use(express.static(__dirname + '/public'))
+
 // SETTING ROUTES
 app.get('/', (req, res)=>{
     res.sendFile(__dirname+ '/index.html')
